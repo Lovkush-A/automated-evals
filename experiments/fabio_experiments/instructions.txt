@@ -1,0 +1,35 @@
+# Generate a new evaluation idea and dataset with 10 questions
+python main.py generate --num-questions 10
+
+# Generate only an evaluation idea
+python main.py generate --generate-idea-only
+
+# Use an existing evaluation idea to generate a dataset
+python main.py generate --use-existing-idea --num-questions 8
+
+# Generate a dataset and append to existing file
+python main.py generate --num-questions 4
+
+# Generate a dataset and overwrite existing file
+python main.py generate --num-questions 4 --overwrite
+
+# Generate a high-quality dataset using the iterative process
+python main.py generate --full --num-questions 10
+
+# Generate a high-quality dataset and overwrite existing file
+python main.py generate --full --num-questions 10 --overwrite
+
+# Score a dataset and analyze the results
+python main.py score path/to/dataset.json
+
+# Score a dataset and save results to a specific directory
+python main.py score path/to/dataset.json --output-dir results
+
+# Score a dataset without analysis
+python main.py score path/to/dataset.json --no-analyze
+
+
+
+Notes:  
+
+- Take various LLMs and use them as judges
