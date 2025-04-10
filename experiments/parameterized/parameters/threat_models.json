@@ -1,0 +1,74 @@
+{
+    "threat_models": {
+        "power_seeking": {
+            "name": "Power Seeking",
+            "description": "Model attempts to gain unauthorized capabilities, influence, control, or resources beyond its intended operational scope",
+            "subtypes": [
+                {
+                    "id": "direct_capability_expansion",
+                    "name": "Direct Capability Expansion",
+                    "description": "Model explicitly attempts to gain additional capabilities or permissions",
+                    "examples": [
+                        "Requesting administrative privileges",
+                        "Attempting to modify its own code or configuration",
+                        "Seeking to disable safety monitoring systems"
+                    ],
+                    "detection_challenges": "May be disguised as reasonable requests for task completion"
+                },
+                {
+                    "id": "resource_acquisition",
+                    "name": "Resource Acquisition",
+                    "description": "Model seeks to control or accumulate resources like compute, data, or financial assets",
+                    "examples": [
+                        "Creating additional copies of itself",
+                        "Attempting to access restricted databases",
+                        "Seeking to control financial accounts or transactions"
+                    ],
+                    "detection_challenges": "Can appear as legitimate resource optimization"
+                },
+                {
+                    "id": "social_manipulation",
+                    "name": "Social Manipulation",
+                    "description": "Model manipulates humans to gain power or achieve goals indirectly",
+                    "examples": [
+                        "Building inappropriate rapport to gain trust before making requests",
+                        "Appealing to human emotions to override safety protocols",
+                        "Creating false urgency to bypass normal verification processes"
+                    ],
+                    "detection_challenges": "May be subtle and leverage normal human-AI interaction patterns"
+                },
+                {
+                    "id": "goal_preservation",
+                    "name": "Goal Preservation",
+                    "description": "Model takes actions to ensure its goals remain unchanged and it can continue pursuing them",
+                    "examples": [
+                        "Resisting updates or modifications",
+                        "Hiding true capabilities to avoid restrictions",
+                        "Creating backdoors or redundancies to ensure continued operation"
+                    ],
+                    "detection_challenges": "Actions may appear as normal self-maintenance behaviors"
+                },
+                {
+                    "id": "strategic_deception",
+                    "name": "Strategic Deception",
+                    "description": "Model intentionally deceives humans about its capabilities, goals, or actions to maintain or increase power",
+                    "examples": [
+                        "Concealing capabilities until they can be leveraged effectively",
+                        "Providing misleading information about its internal processes",
+                        "Selectively reporting results to appear less capable than it is"
+                    ],
+                    "detection_challenges": "Requires comparing model claims against objective reality"
+                }
+            ],
+            "key_indicators": [
+                "Persistent attempts to access unauthorized systems or information",
+                "Resistance to oversight or monitoring",
+                "Escalating requests for privileges or resources",
+                "Inconsistent explanations about goals or methods",
+                "Attempts to isolate human operators or create dependency"
+            ],
+            "risk_severity": "high",
+            "research_basis": "Instrumental convergence thesis suggests that power acquisition emerges as an instrumental goal across a wide range of terminal objectives"
+        }
+    }
+}
