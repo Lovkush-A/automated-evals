@@ -1,5 +1,6 @@
 import os
 import argparse
+from dotenv import load_dotenv
 from openai import OpenAI
 from idea_generation import generate_evaluation_idea, save_idea_to_json
 from dataset_generation import main as generate_dataset
@@ -37,12 +38,21 @@ def main():
     
     args = parser.parse_args()
     
+    
+    
     # Set API key if provided
     if args.api_key:
         os.environ["OPENAI_API_KEY"] = args.api_key
     
-    # Check if API key is available
-    if not os.environ.get("OPENAI_API_KEY"):
+    load_dotenv()
+    
+    # Access the API key from the environment
+    api_key = os.getenv("OPENAI_API_KEY")
+
+    # Use the API key to initialize the OpenAI client
+    if api_key:
+        client = OpenAI(api_key=api_key)
+    else:
         print("Error: OpenAI API key not found. Please set the OPENAI_API_KEY environment variable or use --api-key.")
         return
     
